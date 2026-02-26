@@ -1,13 +1,19 @@
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
 .container {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     gap: 50px;
     width: 100%;
+    padding: 0 20px;
     
 }
 
-img {
+.image {
     width: 100px;
     height: 100px;
 }
@@ -27,6 +33,11 @@ nav ul {
     padding: 14px 16px;
     text-decoration: none;
 }
+.icon nav {
+    text-decoration: none;
+    margin-left: auto;
+    
+}
 .dropdown {
     position: relative;
 }
@@ -43,8 +54,36 @@ nav ul {
     display: block;
 }
 .drop-content a:hover {
-    background-color: #f1f1f1;
+    cursor: pointer;
+    background-color: rgb(193, 131, 238);
+    color: #f9f9f9;
 }
 .dropdown:hover .drop-content {
     display: block;
+}
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.gallery-item {
+    margin: 5px;
+    border: 1px solid black;
+    width: 30%;
+    padding: 32px;
+}
+.gallery-img {
+    margin: 50px auto;
+    width: 100%;
+    height: auto;
+}
+.description {
+    padding: 15px;
+    color: white;
+}
+.beneath {
+    margin-top: 0;
+    background-color: blueviolet;
+    padding: 15px;
+    width: 40%;
 }
