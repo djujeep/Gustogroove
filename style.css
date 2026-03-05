@@ -2,6 +2,10 @@ header {
     display: flex;
     align-items: center;
     width: 100%;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1000;
 }
 
 .container {
@@ -27,7 +31,7 @@ nav ul {
     display: flex;
     gap: 20px;
 }
- a {
+  a {
     display: block;
     color: black;
     padding: 14px 16px;
@@ -61,29 +65,54 @@ nav ul {
 .dropdown:hover .drop-content {
     display: block;
 }
-.image-gallery {
+.news-layout{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:30px;
+    padding:20px;
+}
+.main-news{
+    position:relative;
+}
+
+.main-news img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.news-overlay{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    background:blueviolet;
+    color:white;
+    padding:20px;
+}
+.side-news{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.news-card{
+    display:flex;
+    gap:15px;
+}
+
+.news-card img{
+    width:120px;
+    height:80px;
+    object-fit:cover;
+}
+a .tag {
+    color: blueviolet;
+}
+ a .tag:hover {
+    text-decoration: underline;
+}
+.news-meta{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-.gallery-item {
-    margin: 5px;
-    border: 1px solid black;
-    width: 30%;
-    padding: 32px;
-}
-.gallery-img {
-    margin: 50px auto;
-    width: 100%;
-    height: auto;
-}
-.description {
-    padding: 15px;
-    color: white;
-}
-.beneath {
-    margin-top: 0;
-    background-color: blueviolet;
-    padding: 15px;
-    width: 40%;
+    justify-content: space-between;
 }
