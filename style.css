@@ -133,13 +133,16 @@ a .tag {
 .article-info .date{
     float: right;
     color: white;
+    margin-top: 0;
 }
 .article-info {
     font-weight: bold;
     padding: 10px;
     background-color: rgb(137, 47, 202);
     padding: 10px 0;
-    
+}
+.article-info h3 {
+    color: white;
 }
 .trending ul{
   list-style: none;
@@ -193,4 +196,24 @@ a .tag {
 }
 .article-info a:hover {
    text-decoration: underline;
+}
+.entertainment{
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 9px;
+  margin-bottom: 15px;
+}
+
+.entertainment h2{
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+.lower-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.lower-card {
+    display: flex;
+    gap: 10px;
 }
