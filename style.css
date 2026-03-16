@@ -1,219 +1,73 @@
-header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 1000;
-}
+/* --- GLOBAL RESET & SCROLL FIX --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Arial, sans-serif; overflow-x: hidden; background: #fff; color: #1a1a1a; }
 
-.container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    width: 100%;
-    padding: 0 20px;
-    
-}
+        /* --- HEADER & NAVIGATION (Dropdowns Intact) --- */
+        header { width: 100%; position: sticky; top: 0; background: white; z-index: 2000; border-bottom: 1px solid #eee; }
+        .container { display: flex; align-items: center; max-width: 1200px; margin: 0 auto; padding: 10px 20px; gap: 50px; }
+        .logo img { width: 100px; height: auto; }
+        nav { margin-left: auto; }
+        nav ul { list-style: none; display: flex; gap: 20px; align-items: center; }
+        nav ul li a { text-decoration: none; color: black; padding: 10px; font-weight: bold; font-size: 14px; }
+        .dropdown { position: relative; }
+        .drop-content { display: none; position: absolute; background: #f9f9f9; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); z-index: 2001; }
+        .drop-content a { display: block; padding: 12px 16px; font-weight: normal; border-bottom: 1px solid #eee; }
+        .drop-content a:hover { background: blueviolet; color: white; }
+        .dropdown:hover .drop-content { display: block; }
 
-.image {
-    width: 100px;
-    height: 100px;
-}
-nav {
-    margin-left: 250px;
-}
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-  a {
-    display: block;
-    color: black;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-.icon nav {
-    text-decoration: none;
-    margin-left: auto;
-    
-}
-.dropdown {
-    position: relative;
-}
-.drop-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-}
-.drop-content  a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-.drop-content a:hover {
-    cursor: pointer;
-    background-color: rgb(193, 131, 238);
-    color: #f9f9f9;
-}
-.dropdown:hover .drop-content {
-    display: block;
-}
-.news-layout{
-    display:grid;
-    grid-template-columns: 2fr 1fr;
-    gap:30px;
-    padding:20px;
-}
-.main-news{
-    position:relative;
-}
+        /* --- LAYOUT CONTAINERS (The Secret to Alignment) --- */
+        .news-layout, .pulse-main-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-.main-news img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
+        /* --- TOP SECTION (Lead Story & Side Cards) --- */
+        .news-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        .main-news { position: relative; width: 100%; }
+        .main-news img { width: 100%; height: 450px; object-fit: cover; display: block; }
+        .news-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: blueviolet; color: white; padding: 25px; }
+        .news-meta { display: flex; justify-content: space-between; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
+        .side-news { display: flex; flex-direction: column; gap: 20px; }
+        .news-card { display: flex; gap: 15px; align-items: flex-start; }
+        .news-card img { width: 120px; height: 80px; object-fit: cover; flex-shrink: 0; }
+        .news-card h4 { font-size: 14px; line-height: 1.3; }
+        .tag { color: blueviolet; font-weight: bold; font-size: 11px; display: block; margin-bottom: 4px; }
 
-.news-overlay{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    background:blueviolet;
-    color:white;
-    padding:20px;
-}
-.side-news{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-}
+        /* --- LOWER SECTION (Entertainment + Sidebar Side-by-Side) --- */
+        .pulse-main-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Matches the top grid ratio exactly */
+            gap: 30px;
+            align-items: start;
+        }
 
-.news-card{
-    display:flex;
-    gap:15px;
-}
+        .entertainment-section { width: 100%; }
+        .category-header { border-bottom: 1px solid #ddd; margin-bottom: 20px; }
+        .category-header h2 { font-size: 22px; text-transform: uppercase; border-bottom: 3px solid #000; display: inline-block; padding-bottom: 5px; margin-bottom: -1px; }
 
-.news-card img{
-    width:120px;
-    height:80px;
-    object-fit:cover;
-}
-a .tag {
-    color: blueviolet;
-}
- a .tag:hover {
-    text-decoration: underline;
-}
-.news-meta{
-    display: flex;
-    justify-content: space-between;
-}
-.entertainment-grid{
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-}
-.article-card img{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-.article-info h3 {
-    padding: 10px;
-}
+        .entertainment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .article-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+        .article-meta { display: flex; justify-content: space-between; padding: 12px 0 8px 0; font-size: 11px; font-weight: bold; }
+        .category { color: #d32f2f; }
+        .date { color: #999; }
+        .article-card h3 { font-size: 18px; line-height: 1.4; color: #111; }
 
-.article-info .date{
-    float: right;
-    color: white;
-    margin-top: 0;
-}
-.article-info {
-    font-weight: bold;
-    padding: 10px;
-    background-color: rgb(137, 47, 202);
-    padding: 10px 0;
-}
-.article-info h3 {
-    color: white;
-}
-.trending ul{
-  list-style: none;
-  padding: 0;
-}
-
-.trending li{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: white;
-  padding: 8px 12px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.dot{
-  width: 12px;
-  height: 12px;
-  border: 2px solid purple;
-  border-radius: 50%;
-  margin-right: 10px;
-  position: relative;
-}
-
-.dot::after{
-  content: "";
-  width: 4px;
-  height: 4px;
-  background: rgb(161, 84, 192);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.trending{
-  background: #f5f5f5;
-  padding: 15px;
-  width: 320px;
-}
-
-.trending h3{
-  margin-bottom: 12px;
-  font-size: 30px;
-  font-weight: 700;
-}
-.article-info a {
-  color: orange;
-}
-.article-info a:hover {
-   text-decoration: underline;
-}
-.entertainment{
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 9px;
-  margin-bottom: 15px;
-}
-
-.entertainment h2{
-  margin: 0;
-  font-size: 22px;
-  font-weight: 600;
-}
-.lower-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-.lower-card {
-    display: flex;
-    gap: 10px;
-}
+        /* --- TRENDING SIDEBAR (Pinned to the right of Entertainment) --- */
+        .trending-sidebar {
+            border-left: 1px solid #eee;
+            padding-left: 20px;
+        }
+        .trending-sidebar h3 { font-size: 20px; text-transform: uppercase; border-bottom: 2px solid #000; display: inline-block; margin-bottom: 20px; }
+        .trending-sidebar ul { list-style: none; }
+        .trending-sidebar li { display: flex; gap: 12px; padding: 15px 0; border-bottom: 1px solid #f5f5f5; align-items: flex-start; }
+        .trending-sidebar li a { text-decoration: none; color: #333; font-size: 14px; font-weight: 600; line-height: 1.3; }
+        .dot { min-width: 12px; height: 12px; border: 2px solid #d32f2f; border-radius: 50%; margin-top: 3px; }
