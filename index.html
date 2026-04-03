@@ -3,6 +3,9 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gustogroove</title>
@@ -12,19 +15,19 @@
     <div class="container">
         <div class="logo"><img src="img/GustoGroove_white-1-removebg-preview.png" alt="logo"></div>
         <nav>
-            <ul>
+            <ul class="nav-links">
                 <li class="dropdown"><a href="#">News</a>
                     <div class="drop-content">
                         <a href="#">Local</a><a href="#">Business</a><a href="#">World</a><a href="#">Politics</a>
                     </div>
 
                 </li>
-                <li class="dropdown"><a href="#">Lifestyle</a>
+                <li class="dropdown"><a href="#">Lifestyle</i></a>
                     <div class="drop-content">
                         <a href="#">Beauty</a><a href="#">Food & Travel</a><a href="#">Careers</a>
                     </div>
                 </li>
-                <li class="dropdown"><a href="#">Entertainment</a>
+                <li class="dropdown"><a href="#">Entertainment </a>
                     <div class="drop-content">
                         <a href="#">Music</a><a href="#">Celebrities</a><a href="#">Movies</a>
                     </div>
@@ -32,6 +35,11 @@
                 <li><a href="#">Videos</a></li>
                 <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
             </ul>
+
+            <!--harmburger-->
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </div>
 </header>
@@ -47,43 +55,130 @@
     <div class="side-news">
         <div class="news-card">
             <img src="img/GustoGroove-1.jpg">
-            <div><span class="tag">NEWS</span><h4>Eid Celebrations May Be Disrupted by Fuel Prices</h4></div>
+            <div><a href="#"><span class="tag">NEWS</span></a><h4>Trump signals move to 'take the oil' in Iran as US deploys more military assets to the middle east</h4></div>
         </div>
         <div class="news-card">
             <img src="img/818dfadb-6f6d-410e-b94d-83eb4ab384b5.png">
-            <div><span class="tag">NEWS</span><h4>Alex Otti Continues Delivering on Health Promises</h4></div>
+            <div><span class="tag">NEWS</span><h4>Bloodshed in Jos: Gunmen kill several in Plateau, government imposes curfew as 'Christian massacre' claims trend online</h4></div>
         </div>
         <div class="news-card">
             <img src="img/GustoGroove-1.jpg">
-            <div><span class="tag">NEWS</span><h4>Cooking Gas Price Rises to ₦1,400 Per Kg</h4></div>
+            <div><span class="tag">LIFESTYLE</span><h4>'Japa', marraiges, and side hustles: The unconventional ways Nigerians are surviving the 2026 economy</h4></div>
+        </div>
+        <div class="news-card">
+            <img src="img/GustoGroove-1.jpg">
+            <div><span class="tag">ENTERTAINMENT</span><h4>Nigerians call out Ice Prince, Duncan Mighty and Peruzzi for performing at APC convention</h4></div>
         </div>
     </div>
 </section>
 
 <div class="pulse-main-wrapper">
-    <section class="entertainment-section">
-        <div class="category-header"><h2>Entertainment</h2></div>
-        <div class="entertainment-grid">
+    <div class="entertainment-column">
+        <div class="category-header"><h2>ENTERTAINMENT</h2></div>
+
+        <div class="entertainment-grid-top">
             <div class="article-card">
                 <img src="img/818dfadb-6f6d-410e-b94d-83eb4ab384b5.png">
-                <div class="article-meta"><span class="category">ENTERTAINMENT</span><span class="date">06.03.2026</span></div>
-                <h3>Funke Akindele Champions the Next Generation...</h3>
+                <div class="article-meta"><a href="#"><span>ENTERTAINMENT</span></a><span style="color: plum;">28.03.2026</span></div>
+                <h3>Mr Eazi's emPawa Africa could pay $456,000 after copyright case...</h3>
             </div>
             <div class="article-card">
                 <img src="img/818dfadb-6f6d-410e-b94d-83eb4ab384b5.png">
-                <div class="article-meta"><span class="category">ENTERTAINMENT</span><span class="date">06.03.2026</span></div>
-                <h3>Asake Surprises His Father With ₦200M Toyota SUV</h3>
+                <div class="article-meta"><a href="#"><span>ENTERTAINMENT</a></span><span style="color: plum;">28.03.2026</span></div>
+                <h3>Nigerians call out Ice Prince, Duncan Mighty and Peruzzi for...</h3>
             </div>
         </div>
-    </section>
+
+        <div class="entertainment-lower-grid">
+            <div class="list-card">
+                <img src="img/818dfadb-6f6d-410e-b94d-83eb4ab384b5.png">
+                <div class="list-info">
+                    <div class="article-meta"><a href="#"><span>ENTERTAINMENT</span></a><span style="color: plum;">27.03.2026</span></div>
+                    <h4>Joke Silva named head judge as AMVCA announces 12th edition ceremony...</h4>
+                </div>
+            </div>
+            <div class="list-card">
+                <img src="img/818dfadb-6f6d-410e-b94d-83eb4ab384b5.png">
+                <div class="list-info">
+                    <div class="article-meta"><a href="#"><span>ENTERTAINMENT</span></a><span style="color: plum;">26.03.2026</span></div>
+                    <h4>Actor Kunle Remi speaks up on economic hardship, asks Nigerians...</h4>
+                </div>
+            </div>
+            <div class="list-card">
+                <img src="img/818dfadb-6f6d-410e-b94d-83eb4ab384b5.png">
+                <div class="list-info">
+                    <div class="article-meta"><a href="#"><span>ENTERTAINMENT</span></a><span style="color: plum;">27.03.2026</span></div>
+                    <h4>MOBO Awards 2026: Olivia Dean, Ayra Starr, Wizkid among biggest...</h4>
+                </div>
+            </div>
+            <div class="list-card">
+                <img src="img/818dfadb-6f6d-410e-b94d-83eb4ab384b5.png">
+                <div class="list-info">
+                    <div class="article-meta"><a href="#"><span>ENTERTAINMENT</span></a><span style="color: plum;">26.03.2026</span></div>
+                    <h4>Blessing CEO reveals she has been diagnosed with breast cancer...</h4>
+                </div>
+            </div>
+        </div>
+        
+        <a href="#" style="text-align: right; display: block; margin-top: 20px; color: rgb(133, 66, 133); font-weight: bold; text-decoration: none;">VIEW ALL <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
     <aside class="trending-sidebar">
-        <h3>Trending</h3>
+        <h3 style="text-transform: uppercase; border-bottom: 2px solid #000; display: inline-block; margin-bottom: 15px;">Trending</h3>
         <ul>
-            <li><span class="dot"></span><a href="#">Is Eating Rice Every Day Bad for You?</a></li>
-            <li><span class="dot"></span><a href="#">War Tensions: Why the Strait Matters</a></li>
-            <li><span class="dot"></span><a href="#">Davido Is Being Sued by Lawyer</a></li>
+            <li>
+                <div class="bullseye"></div>
+                <a href="#" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">UK visa fees rise again: Nigerians now need ₦5.5 million...</a>
+            </li>
+            <li>
+                <div class="bullseye"></div>
+                <a href="#" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">Nationwide blackout: Federal Government says Nigeria needs $100 billion...</a>
+            </li>
+            <li>
+                <div class="bullseye"></div>
+                <a href="#" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">Davido announces landmark London festival scheduled for August 2026</a>
+            </li>
+            <li>
+                <div class="bullseye"></div>
+                <a href="#" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">Davido announces landmark London festival scheduled for August 2026</a>
+            </li>
+            <li>
+                <div class="bullseye"></div>
+                <a href="#" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">Davido announces landmark London festival scheduled for August 2026</a>
+            </li>
+            <li>
+                <div class="bullseye"></div>
+                <a href="#" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">Davido announces landmark London festival scheduled for August 2026</a>
+            </li>
+            <li>
+                <div class="bullseye"></div>
+                <a href="#" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">Davido announces landmark London festival scheduled for August 2026</a>
+            </li>
+            <li>
+                <div class="bullseye"></div>
+                <a href="#" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">Davido announces landmark London festival scheduled for August 2026</a>
+            </li><li>
+                <div class="bullseye"></div>
+                <a href="#" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">Davido announces landmark London festival scheduled for August 2026</a>
+            </li>
+            <li>
+                <div class="bullseye"></div>
+                <a href="#" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">Davido announces landmark London festival scheduled for August 2026</a>
+            </li>
+            <li>
+                <div class="bullseye"></div>
+                <a href="#" style="text-decoration: none; color: #333; font-weight: 600; font-size: 14px;">Davido announces landmark London festival scheduled for August 2026</a>
+            </li>
         </ul>
     </aside>
+    <div class="news-wrapper">
+        <div class="news-section">
+            <div class="category-header">NEWS</div>
+        </div>
+    </div>
 </div>
+</div>
+<div class="overlay"></div>
+<script src="script.js"></script>
 </body>
 </html>

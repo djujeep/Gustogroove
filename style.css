@@ -1,17 +1,32 @@
-/* --- GLOBAL RESET & SCROLL FIX --- */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: Arial, sans-serif; overflow-x: hidden; background: #fff; color: #1a1a1a; }
+       
+ body { 
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings:"wdth" 100;
+        overflow-x: hidden; 
+        background: #fff; 
+        color: #1a1a1a; 
+    }
 
-        /* --- HEADER & NAVIGATION (Dropdowns Intact) --- */
+       *{ 
+          box-sizing: border-box; 
+          margin: 0; 
+          padding: 0; 
+    }
+
+        
+
         header {
-             width: 100%; 
-             position: sticky;
-             top: 0; 
-             background: white; 
-             z-index: 2000; 
-             border-bottom: 1px solid #eee; 
-             background-color: rgb(249, 235, 243);
-            }
+            width: 100%; 
+            position: sticky;
+            top: 0; 
+            background: white; 
+            z-index: 2000; 
+            border-bottom: 1px solid #eee; 
+            background-color: rgb(249, 235, 243);
+    }
         .container { 
             display: flex; 
             align-items: center; 
@@ -19,96 +34,311 @@
             margin: 0 auto; 
             padding: 10px 20px; 
             gap: 50px; 
-        }
-        .logo img { width: 100px; height: auto; }
-        nav { margin-left: auto; }
-        nav ul { list-style: none; display: flex; gap: 20px; align-items: center; }
-        nav ul li a { text-decoration: none; color: black; padding: 10px; font-weight: bold; font-size: 14px; }
-        .dropdown { position: relative; }
-        .drop-content { display: none; position: absolute; background: #f9f9f9; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); z-index: 2001; }
-        .drop-content a { display: block; padding: 12px 16px; font-weight: normal; border-bottom: 1px solid #eee; }
-        .drop-content a:hover { background: blueviolet; color: white; }
-        .dropdown:hover .drop-content { display: block; }
+    }
+        .logo img {
+            width: 100px; 
+            height: auto; 
+    }
 
-        /* --- LAYOUT CONTAINERS (The Secret to Alignment) --- */
+        nav {
+            margin-left: auto; 
+    }
+        nav ul {
+            position: relative;
+            list-style: none; 
+            display: flex; 
+            gap: 20px; 
+            align-items: center; 
+            z-index: 3000;
+    }
+        nav ul li a { 
+
+            text-decoration: none; 
+            color: black; 
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee; 
+            display: block;
+            font-weight: bold; 
+            font-size: 14px; 
+    }
+
+        .dropdown {
+            position: relative; 
+    }
+
+        .drop-content {
+            display: none;
+            position: absolute;
+            background: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1); 
+            z-index: 2001; 
+    }
+
+        .drop-content a {
+            display: block; 
+            padding: 12px 16px; 
+            font-weight: normal; 
+            border-bottom: 1px solid #eee; 
+    }
+
+        .drop-content a:hover {
+            background: blueviolet; 
+            color: white; 
+    }
+
+        .dropdown:hover .drop-content {
+            display: block; 
+    }
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            position: relative;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                z-index: 4000;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                flex-direction: column;
+                height: 100vh;
+                width: 250px;
+                background: rgb(249, 235, 243);
+                padding-top: 80px;
+                transition: 0.3s ease;
+                display: flex;
+                z-index: 3001;
+            }
+            nav ul {
+               display: flex;
+               flex-direction: column;
+               gap: 20px;
+               color: white;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .drop-content {
+                position: static;
+            }
+            .dropdown:hover .drop-content {
+                display: block;
+            }
+            .dropdown.active .drop-content {
+                display: block;
+            }
+            .overlay {
+                display: block;
+            }
+            .nav-links li a {
+                border-bottom: 1px solid #eee;
+}
+
+.dropdown.active > a {
+    border-bottom: 2px solid purple;
+}
+        }
         .news-layout, .pulse-main-wrapper {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-        }
+    }
 
-        /* --- TOP SECTION (Lead Story & Side Cards) --- */
         .news-layout {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 30px;
-        }
-        .main-news { position: relative; width: 100%; }
-        .main-news img { width: 100%; height: 450px; object-fit: cover; display: block; }
-        .news-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: blueviolet; color: white; padding: 25px; }
-        .news-meta { display: flex; justify-content: space-between; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
-        .side-news { display: flex; flex-direction: column; gap: 20px; }
-        .news-card { display: flex; gap: 15px; align-items: flex-start; }
-        .news-card img { width: 120px; height: 80px; object-fit: cover; flex-shrink: 0; }
-        .news-card h4 { font-size: 14px; line-height: 1.3; }
-        .tag { color: blueviolet; font-weight: bold; font-size: 11px; display: block; margin-bottom: 4px; }
+    }
+        .main-news {
+            position: relative; 
+            width: 100%; 
+    }
 
-        /* --- LOWER SECTION (Entertainment + Sidebar Side-by-Side) --- */
-        .pulse-main-wrapper {
-            display: grid;
-            grid-template-columns: 2fr 1fr; /* Matches the top grid ratio exactly */
-            gap: 30px;
-            align-items: start;
-        }
+        .main-news img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover; 
+            display: block; 
+    }
 
-        .entertainment-section { width: 100%; }
-        .category-header { border-bottom: 1px solid #ddd; margin-bottom: 20px; }
-        .category-header h2 { font-size: 22px; text-transform: uppercase; border-bottom: 3px solid #000; display: inline-block; padding-bottom: 5px; margin-bottom: -1px; }
+        .news-overlay {
+            position: absolute;
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            background: blueviolet; 
+            color: white; 
+            padding: 25px; 
+    }
 
-        .entertainment-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-        .article-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
-        .article-meta { display: flex; justify-content: space-between; padding: 12px 0 8px 0; font-size: 11px; font-weight: bold; }
-        .category { color: #d32f2f; }
-        .date { color: #999; }
-        .article-card h3 { font-size: 18px; line-height: 1.4; color: #111; }
+        .news-meta {
+            display: flex; 
+            justify-content: space-between; 
+            font-size: 12px; 
+            font-weight: bold; 
+            margin-bottom: 10px; 
+    }
 
-        /* --- TRENDING SIDEBAR (Pinned to the right of Entertainment) --- */
-        .trending-sidebar {
-            border-left: 1px solid #eee;
-            padding-left: 20px;
-        }
-        .trending-sidebar h3 { 
-            font-size: 20px; 
-            text-transform: uppercase; 
-            border-bottom: 2px solid #000; 
-            display: inline-block; 
-            margin-bottom: 20px; 
-        }
-        .trending-sidebar ul {
-             list-style: none;
-             }
-        .trending-sidebar li {
-             display: flex; 
-             gap: 12px; 
-             padding: 15px 0; 
-             border-bottom: 1px solid #f5f5f5; 
-             align-items: flex-start; 
-            }
-        .trending-sidebar li a {
-             text-decoration: none;
-             color: #333; 
-             font-size: 14px; 
-             font-weight: 600; 
-             line-height: 1.3; 
-            }
-        .dot { 
-            min-width: 12px; 
-            height: 12px; 
-            border: 2px solid #d32f2f; 
-            border-radius: 50%; 
-            margin-top: 3px; 
-        }
+        .side-news { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+    }
+
+        .news-card { 
+            display: flex; 
+            gap: 15px; 
+            align-items: flex-start; 
+    }
+
+        .news-card img {
+            width: 120px; 
+            height: 80px; 
+            object-fit: cover; 
+            flex-shrink: 0; 
+    }
+
+        .news-card h4 {
+            font-size: 14px;
+            line-height: 1.3; 
+    }
+       .pulse-main-wrapper {
+             display: grid;
+             grid-template-columns: 1fr 320px; 
+             gap: 30px;
+             max-width: 1200px;
+             margin: 40px auto;
+             padding: 0 20px;
+             align-items: start;
+}
+
+/* LEFT SIDE: Everything Entertainment */
+.entertainment-column {
+    display: flex;
+    flex-direction: column;
+}
+.entertainment-grid-top img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* TOP BIG CARDS (2 in a row) */
+.entertainment-grid-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+/* THE LOWER 2-COLUMN LIST (As seen in your screenshot) */
+.entertainment-lower-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns of links */
+    gap: 20px;
+    padding-top: 25px;
+}
+
+.list-card {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.list-card img {
+    width: 110px; 
+    height: 90px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    flex-shrink: 0;
+
+}
+
+/* HEADING BOLDNESS */
+.list-info h4 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #1a1a1a;
+}
+
+/* RIGHT SIDE: TRENDING SIDEBAR */
+.trending-sidebar {
+    border-left: 1px solid #eee;
+    padding-left: 20px;
+}
+
+.trending-sidebar li {
+    display: flex;
+    gap: 10px;
+    padding: 12px 0;
+    align-items: flex-start;
+}
+
+/* THE BULLSEYE ICON */
+.bullseye {
+    min-width: 14px;
+    height: 14px;
+    border: 2px solid purple;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.bullseye::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: purple;
+    border-radius: 50%;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+}
+.article-meta a {
+    font-weight: bold;
+    text-decoration: none;
+}
+.article-meta a:hover {
+    text-decoration: underline;
+}
+.category-header {
+    padding-bottom: 20px;
+    width: 100%;
+    margin-bottom: 25px; /* Space between the lines and the big images */
+    padding-bottom: 5px; /* Space between the text and the lines */
+    border-bottom: 3px double #ddd;
+}
+.category-news {
+    padding-bottom: 20px;
+    width: 100%;
+    margin-bottom: 25px;
+    border-bottom: 3px double #ddd;
+}
+.overlay {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); 
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 2000;
+    display: none;
+}
+.overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
