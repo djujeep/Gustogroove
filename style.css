@@ -870,4 +870,24 @@
      .footer-columns {
         grid-template-columns: 1fr 1fr;
     }
+    nav ul {
+        gap: 10px; 
+    }
+
+    /* 2. Reduce padding on mobile specifically */
+    nav ul li a {
+        padding: 8px 10px; 
+        font-size: 12px; /* Smaller text for smaller screens */
+    }
+
+    /* 3. Make the logo even smaller on mobile */
+    .logo img {
+        width: 60px;
+    }
+
+    /* 4. Reduce the container gap */
+    .container {
+        gap: 10px;
+        padding: 0 10px;
+    }
 }
