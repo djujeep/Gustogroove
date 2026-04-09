@@ -3,30 +3,31 @@ const navLinks = document.querySelector(".nav-links");
 const overlay = document.querySelector(".overlay");
 const dropdowns = document.querySelectorAll(".dropdown");
 
-// Toggle menu + overlay
+// 1. Open/Close Hamburger
 menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
     overlay.classList.toggle("active");
-
     menuToggle.classList.toggle("fa-bars");
     menuToggle.classList.toggle("fa-times");
 });
 
-// Close menu when clicking overlay
-overlay.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-    overlay.classList.remove("active");
-
-    menuToggle.classList.add("fa-bars");
-    menuToggle.classList.remove("fa-times");
-});
-
-// Dropdowns (mobile only)
+// 2. Dropdown Logic (Mobile Only)
 dropdowns.forEach(drop => {
-    drop.addEventListener("click", (e) => {
+    const link = drop.querySelector("a");
+    link.addEventListener("click", (e) => {
         if (window.innerWidth <= 768) {
-            e.preventDefault();
+            // Check if we are clicking a dropdown toggle
+            // If it's a dropdown, toggle it and DON'T go to the page yet
+            e.stopPropagation(); 
             drop.classList.toggle("active");
         }
     });
+});
+
+// 3. Close menu when clicking overlay
+overlay.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    overlay.classList.remove("active");
+    menuToggle.classList.add("fa-bars");
+    menuToggle.classList.remove("fa-times");
 });

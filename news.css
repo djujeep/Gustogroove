@@ -626,4 +626,24 @@
         justify-content: center; /* Centers it on phones for better thumb reach */
         border-top: none;
     }
+    .nav-links {
+        display: flex; /* Or whatever your layout needs */
+        position: fixed;
+        z-index: 2500 !important; /* Higher than the overlay */
+        pointer-events: auto !important; /* Forces it to accept touches */
+    }
+
+    /* 2. Ensure the overlay is BEHIND the menu but ABOVE the content */
+    .overlay {
+        z-index: 1500 !important; 
+    }
+
+    /* 3. Make sure the links themselves are clickable */
+    .nav-links a {
+        display: block;
+        width: 100%;
+        position: relative;
+        z-index: 2501 !important;
+        cursor: pointer;
+    }
 }
