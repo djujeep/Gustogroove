@@ -176,7 +176,6 @@
             flex-direction: column; 
             gap: 20px; 
     }
-
         .news-card { 
             display: flex; 
             gap: 15px; 

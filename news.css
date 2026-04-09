@@ -1,0 +1,565 @@
+ body { 
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        font-variation-settings:"wdth" 100;
+        overflow-x: hidden; 
+        background: #fff; 
+        color: #1a1a1a; 
+    }
+
+       *{ 
+          box-sizing: border-box; 
+          margin: 0; 
+          padding: 0; 
+    }
+
+        
+
+        header {
+            width: 100%; 
+            position: sticky;
+            top: 0; 
+            left: 0;
+            background: white; 
+            z-index: 2000; 
+            background-color: rgb(249, 235, 243);
+    }
+        .container { 
+            display: flex; 
+            align-items: center; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0px 20px; 
+            gap: 50px; 
+    }
+        .logo img {
+            width: 80px; 
+            height: auto; 
+            display: block;
+    }
+
+        nav {
+            margin-left: auto; 
+    }
+        nav ul {
+            position: relative;
+            list-style: none; 
+            display: flex; 
+            gap: 20px; 
+            align-items: center; 
+            z-index: 3000;
+    }
+        nav ul li a { 
+            text-decoration: none; 
+            color: black; 
+            padding: 10px 20px;
+            display: block;
+            font-weight: bold; 
+            font-size: 13px; 
+    }
+
+        .dropdown {
+            position: relative; 
+    }
+
+        .drop-content {
+            display: none;
+            position: absolute;
+            background: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1); 
+            z-index: 2001; 
+    }
+
+        .drop-content a {
+            display: block; 
+            padding: 12px 16px; 
+            font-weight: normal; 
+            border-bottom: 1px solid #eee; 
+    }
+
+        .drop-content a:hover {
+            background: blueviolet; 
+            color: white; 
+    }
+
+        .dropdown:hover .drop-content {
+            display: block; 
+    }
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            position: relative;
+            z-index: 3000;
+        }
+
+/* Black Banner Styling */
+.news-banner {
+    background-color: rgb(115, 59, 122);
+    color: #ffffff;
+    padding: 40px 0; /* Vertical space */
+}
+
+.inner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumbs {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.breadcrumbs a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.breadcrumbs span {
+    color: #fff;
+    margin-left: 5px;
+}
+
+.category-title {
+    font-size: 45px;
+    font-weight: 800; /* Extra bold like Pulse */
+    margin: 0;
+}
+
+/* White Sub-Nav Styling */
+.sub-nav {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.active-tab {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 0;
+    display: inline-block;
+    color: #000;
+    border-bottom: 3px solid black; /* The Pulse Red underline */
+    margin-bottom: -1px; /* Overlaps the gray border perfectly */
+}
+
+.pulse-footer {
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Red Top Bar */
+.footer-top {
+    background-color: rgb(115, 59, 122); /* Adjusted red color */
+    padding: 30px 0;
+}
+
+.footer-top .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-logo img {
+    height: 40px; /* Adjust based on your logo shape */
+    filter: brightness(0) invert(1); /* Makes a dark logo white if needed */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 18px;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Black Bottom Section */
+.footer-bottom {
+    background-color: #000;
+    color: white;
+    padding: 60px 0 30px 0;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-col h4 {
+    color: #673d83; /* Sky blue category titles */
+    font-size: 14px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: white;
+}
+
+.footer-copyright {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #777;
+}
+.overlay {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5); 
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 1000;
+    display: block;
+}
+.overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .news-layout, .pulse-main-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+    }
+
+        .news-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+    }
+        .main-news {
+            display: flex; 
+            flex-direction: column;
+    }
+
+        .main-news img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover; 
+            display: block; 
+    }
+
+        .news-overlay {
+            box-sizing: border-box; 
+            width: 100%;
+            background: blueviolet; 
+            color: white; 
+            padding: 25px; 
+    }
+
+        .news-meta {
+            display: flex; 
+            justify-content: space-between; 
+            font-size: 12px; 
+            font-weight: bold; 
+            margin-bottom: 10px; 
+    }
+    .news-meta a {
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+    }
+    .news-meta a:hover{
+        text-decoration: underline;
+        
+    }
+    .news-below a {
+        text-decoration: none;
+        color: white;
+        font-style: italic;
+    }
+    .news-below a:hover {
+        color: rgb(194, 163, 174);
+    }
+    .news a {
+        text-decoration: none;
+        font-weight: bold;
+        font-style: normal; 
+        padding-bottom: 25px;
+    }
+    .news a:hover {
+        text-decoration: underline;
+    }
+    .desc a {
+        text-decoration: none;
+        font-size: small;
+        font-weight: 400;
+        color: rgb(139, 53, 234);
+        font-style: italic;
+
+    }
+    .desc a:hover {
+        color: rgb(156, 108, 156);
+    }
+    .side-news { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+    }
+        .news-card { 
+            display: flex; 
+            gap: 15px; 
+            align-items: flex-start; 
+    }
+
+        .news-card img {
+            width: 120px; 
+            height: 80px; 
+            object-fit: cover; 
+            flex-shrink: 0; 
+    }
+       .pulse-main-wrapper {
+             display: grid;
+             grid-template-columns: 1fr 320px; 
+             gap: 30px;
+             max-width: 1200px;
+             margin: 40px auto;
+             padding: 0 20px;
+             align-items: start;
+}
+
+.lifestyle-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.lifestyle-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.lifestyle-img {
+    width: 100%;
+    height: 150px; /* Shorter height than the main news cards */
+    margin-bottom: 12px;
+}
+
+.lifestyle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px; /* Soft rounded corners from the screenshot */
+}
+
+.lifestyle-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.lifestyle-meta .category {
+    color: rgb(131, 45, 148) /* A brownish-red for Lifestyle */
+}
+
+.lifestyle-meta .date {
+    color: #999;
+}
+
+.lifestyle-headline {
+    font-size: small;
+    font-style: italic;
+    font-weight: 600;
+    margin: 0;
+    color: rgb(114, 64, 114);
+}
+.lifestyle-headline:hover {
+    cursor: pointer;
+    font-style: normal;
+    color: rgb(159, 60, 172);
+}
+
+/* Wrapper to keep everything organized */
+.lifestyle-section-wrapper {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+/* The "View All" container pushes content to the right */
+.view-all-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns to the right */
+    margin-top: 20px;
+    border-top: 1px solid #f0f0f0; /* Optional: adds a subtle separator line */
+    padding-top: 15px;
+}
+
+.view-all-link {
+    text-decoration: none;
+    color: purple; /* Matching your lifestyle red/brown */
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.view-all-link:hover {
+    color: purple;
+}
+
+/* The Circle Arrow Style */
+.arrow-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border: 2px solid currentColor;
+    border-radius: 50%; /* Makes it a circle */
+    font-size: 12px;
+}
+
+/* Ensure the grid doesn't have its own margin anymore 
+   since the wrapper handles it now */
+.lifestyle-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 0; 
+}
+.meta-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.meta-data a {
+    text-decoration: none;
+}
+.meta-data a:hover {
+    text-decoration: underline;
+}
+.category {
+  color: rgb(82, 49, 117); /* Deep red color from the screenshot */
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.date {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    /* Shrink the black banner area */
+    .menu-toggle {
+                display: block;
+                z-index: 4000;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                flex-direction: column;
+                height: 100vh;
+                width: 250px;
+                background: rgb(249, 235, 243);
+                padding-top: 80px;
+                transition: 0.3s ease;
+                display: flex;
+                z-index: 2000;
+            }
+            nav ul {
+               display: flex;
+               flex-direction: column;
+               gap: 20px;
+               color: white;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .drop-content {
+                position: static;
+            }
+            .dropdown:hover .drop-content {
+                display: block;
+            }
+            .dropdown.active .drop-content {
+                display: block;
+            }
+            .overlay {
+                display: block;
+            }
+            .nav-links li a {
+                border-bottom: 1px solid #eee;
+        }
+        .footer-columns {
+        grid-template-columns: 1fr 1fr;
+    }
+    .news-banner {
+        padding: 20px 0; /* Reduced from 40px */
+    }
+
+    /* Smaller Breadcrumbs */
+    .breadcrumbs {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    /* Shrink the big title so it fits on one line */
+    .category-title {
+        font-size: 28px; /* Reduced from 45px */
+    }
+
+    /* Sub-navigation adjustments */
+    .active-tab {
+        font-size: 16px; /* Slightly smaller text */
+        padding: 12px 0; /* Tighter vertical space */
+    }
+    
+    .inner-container {
+        padding: 0 15px; /* Slightly tighter horizontal padding */
+    }
+}
